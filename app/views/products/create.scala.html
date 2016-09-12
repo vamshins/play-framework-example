@@ -1,0 +1,27 @@
+@(productForm: Form[Product])
+
+@import helper._
+@import b4.vertical.fieldConstructor
+@main(title = "Play Framework Application") {
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-md-4 col-md-offset-4">
+
+                <div class="account-wall">
+                @b4.form(routes.ProductController.saveProduct) {
+                    <div class="container">
+                        <div class="col-md-6">
+                            @b4.text( productForm("ean"), '_label -> "EAN")
+                            @b4.text( productForm("name"), '_label -> "Name")
+                            @b4.text( productForm("description"), '_label -> "Description")
+                            @b4.submit('class -> "btn btn-primary"){ Create }
+                        </div>
+                    </div>
+                }
+                </div>
+
+            </div>
+        </div>
+    </div>
+}

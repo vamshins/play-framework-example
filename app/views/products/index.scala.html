@@ -1,0 +1,28 @@
+@(products:List[Product])
+
+@main("List of Products") {
+
+    <div class="container">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>EAN</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            @for(product <- products) {
+
+                <tr>
+                    <td>@product.getEan</td>
+                    <td>@product.getName</td>
+                    <td>@product.getDescription</td>
+                </tr>
+            }
+
+            </tbody>
+        </table>
+    </div>
+
+}
